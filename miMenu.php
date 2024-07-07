@@ -1,5 +1,5 @@
 <?php
-/*Este modulo es contener y el menu de la pagina y no tener que sobreescribirlo en cada subpagina. */
+/*Este modulo es para contener el menu de la pagina y no tener que sobreescribirlo en cada subpagina. */
 echo 
     '<nav>
         <ul>

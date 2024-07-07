@@ -1,33 +1,22 @@
 <?php
-//Defino variables
-$mensaje = $_POST['mensaje']; //el array $_POST[] tiene todos los elementos recibidos por metodo POST.
-$mensaje = sanitizarInput($mensaje);
-$criptograma = encriptar($mensaje);
+// ############################################### VARIABLES #######################################
+
+$input = $_POST['input']; //el array $_POST[] tiene todos los elementos recibidos por metodo POST. Se corresponde la clave en el array con el nombre de la variable en el formulario.
+$input = sanitizarInput($input);
+$mensaje = "";
+$criptograma = "";
+$opcion = $_POST['opcion'];
 $tiempo = date("d/m/Y, H:i", time());
 
+// ############################################### SECUENCIA DE CONTROL DEL PROGRAMA ###############
 
 
+$mensaje = establecerMensaje($opcion, $input);
+$criptograma = encriptar($mensaje);
+imprimir($mensaje, $criptograma, $tiempo);
 
 
-
-
-
-echo "<h2>MODULO DE CIFRADO</h2> 
-Su mensaje: $mensaje <hr/>
-Se traduce como: $criptograma <hr />
-Realizado: $tiempo";
-
-
-
-
-
-
-
-
-
-
-
-
+// ############################################### FUNCIONES #######################################
 
 //Esta funcion es pensando en la seguridad... para que no me joda el usuario.
 //Fundamentar con datos.
@@ -68,6 +57,72 @@ function encriptar (string $msj){
     $msj = str_replace(array('z','Z'), "26-", $msj);
     return $msj;
 }
+
+function imprimir($m, $c, $t) {
+    echo "<h2>MODULO DE CIFRADO</h2> 
+Su mensaje: $m <br/>
+Conteo de incidencias: <br/>";
+
+
+foreach (count_chars($m, 1) as $caracter => $incidencia) {
+    echo "Hay $incidencia incidencias de \"" , chr($caracter) , "\" en el mensaje. <br/>";
+ }
+ echo "<hr/>";
+
+echo "Se traduce como: $c <br />
+Conteo de incidencias: <br/>";
+
+
+foreach (count_chars($c, 1) as $caracter => $incidencia) {
+    echo "Hay $incidencia incidencias de \"" , chr($caracter) , "\" en el mensaje. <br/>";
+ }
+ echo "<hr/>
+ Realizado: $t";
+
+
+}
+
+function establecerMensaje($o, $i){ // ALGO PASA ACA... NO TOMA 'decodificar'
+    if ($o == "encriptar") {
+        $msj = $i;
+    } elseif ($o == "decodificar"){
+        $msj = decodificar($i);
+    }
+
+    return $msj;
+
+}
+
+function decodificar($cripto){ 
+    $cripto = str_replace("1-", "a-", $cripto);
+    $cripto = str_replace("2-", "b-", $cripto);
+    $cripto = str_replace("3-", "c-", $cripto);
+    $cripto = str_replace("4-", "d-", $cripto);
+    $cripto = str_replace("5-", "e-", $cripto);
+    $cripto = str_replace("6-", "f-", $cripto);
+    $cripto = str_replace("7-", "g-", $cripto);
+    $cripto = str_replace("8-", "h-", $cripto);
+    $cripto = str_replace("9-", "i-", $cripto);
+    $cripto = str_replace("10-","j-", $cripto);
+    $cripto = str_replace("11-","k-", $cripto);
+    $cripto = str_replace("12-","l-", $cripto);
+    $cripto = str_replace("13-","m-", $cripto);
+    $cripto = str_replace("14-","n-", $cripto);
+    $cripto = str_replace("16-","o-", $cripto);
+    $cripto = str_replace("17-","p-", $cripto);
+    $cripto = str_replace("18-","q-", $cripto);
+    $cripto = str_replace("19-","r-", $cripto);
+    $cripto = str_replace("20-","s-", $cripto);
+    $cripto = str_replace("21-","t-", $cripto);
+    $cripto = str_replace("22-","u-", $cripto);
+    $cripto = str_replace("23-","v-", $cripto);
+    $cripto = str_replace("24", "w-", $cripto);
+    $cripto = str_replace("25-","x-", $cripto);
+    $cripto = str_replace("15-","y-", $cripto);
+    $cripto = str_replace("26-","z-", $cripto);
+    return $cripto;
+}
+
 
 
 ?>
