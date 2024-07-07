@@ -1,0 +1,26 @@
+header{
+    text-align: center;
+    background-color: aquamarine;
+    margin: 0%;
+    padding: 0%;
+}
+
+nav{
+    background-color: aqua;
+    text-align: center;
+    margin: 0%;
+    padding: 0%;
+}
+
+ul > li {
+    display: inline;
+    list-style: none;
+
+}
+
+footer{
+    padding: 1%;
+    border: 1%;
+    background-color: antiquewhite;
+    align-items: center;
+}

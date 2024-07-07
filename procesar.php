@@ -1,0 +1,73 @@
+<?php
+//Defino variables
+$mensaje = $_POST['mensaje']; //el array $_POST[] tiene todos los elementos recibidos por metodo POST.
+$mensaje = sanitizarInput($mensaje);
+$criptograma = encriptar($mensaje);
+$tiempo = date("d/m/Y, H:i", time());
+
+
+
+
+
+
+
+
+echo "<h2>MODULO DE CIFRADO</h2> 
+Su mensaje: $mensaje <hr/>
+Se traduce como: $criptograma <hr />
+Realizado: $tiempo";
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Esta funcion es pensando en la seguridad... para que no me joda el usuario.
+//Fundamentar con datos.
+function sanitizarInput($var){
+
+    $var = strip_tags($var); // le saca las etiquetas html
+    $var = htmlentities($var); // si quedo alguna etiqueta, la transforma para que no sea mas una etqueta.
+    return $var;
+}
+
+
+function encriptar (string $msj){
+    $msj = str_replace(array('a','A'), "1-", $msj);
+    $msj = str_replace(array('b','B'), "2-", $msj);
+    $msj = str_replace(array('c','C'), "3-", $msj);
+    $msj = str_replace(array('d','D'), "4-", $msj);
+    $msj = str_replace(array('e','E'), "5-", $msj);
+    $msj = str_replace(array('f','F'), "6-", $msj);
+    $msj = str_replace(array('g','G'), "7-", $msj);
+    $msj = str_replace(array('h','H'), "8-", $msj);
+    $msj = str_replace(array('i','I'), "9-", $msj);
+    $msj = str_replace(array('j','J'), "10-", $msj);
+    $msj = str_replace(array('k','K'), "11-", $msj);
+    $msj = str_replace(array('l','L'), "12-", $msj);
+    $msj = str_replace(array('m','M'), "13-", $msj);
+    $msj = str_replace(array('n','N'), "14-", $msj);
+    $msj = str_replace(array('o','O'), "16-", $msj);
+    $msj = str_replace(array('p','P'), "17-", $msj);
+    $msj = str_replace(array('q','Q'), "18-", $msj);
+    $msj = str_replace(array('r','R'), "19-", $msj);
+    $msj = str_replace(array('s','S'), "20-", $msj);
+    $msj = str_replace(array('t','T'), "21-", $msj);
+    $msj = str_replace(array('u','U'), "22-", $msj);
+    $msj = str_replace(array('v','V'), "23-", $msj);
+    $msj = str_replace(array('w','W'), "24", $msj);
+    $msj = str_replace(array('x','X'), "25-", $msj);
+    $msj = str_replace(array('y','Y'), "15-", $msj);
+    $msj = str_replace(array('z','Z'), "26-", $msj);
+    return $msj;
+}
+
+
+?>
