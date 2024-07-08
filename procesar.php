@@ -13,7 +13,7 @@ $tiempo = date("d/m/Y, H:i", time());
 
 $mensaje = establecerMensaje($opcion, $input);
 $criptograma = encriptar($mensaje);
-imprimir($mensaje, $criptograma, $tiempo);
+imprimir($mensaje, $criptograma, $tiempo, $opcion);
 
 
 // ############################################### FUNCIONES #######################################
@@ -58,7 +58,7 @@ function encriptar (string $msj){
     return $msj;
 }
 
-function imprimir($m, $c, $t) {
+function imprimir($m, $c, $t, $o) {
     echo "<h2>MODULO DE CIFRADO</h2> 
 Su mensaje: $m <br/>
 Conteo de incidencias: <br/>";
@@ -77,12 +77,13 @@ foreach (count_chars($c, 1) as $caracter => $incidencia) {
     echo "Hay $incidencia incidencias de \"" , chr($caracter) , "\" en el mensaje. <br/>";
  }
  echo "<hr/>
- Realizado: $t";
+ Realizado: $t <br />
+ Usted selecciono la opcion: $o";
 
 
 }
 
-function establecerMensaje($o, $i){ // ALGO PASA ACA... NO TOMA 'decodificar'
+function establecerMensaje($o, $i){
     if ($o == "encriptar") {
         $msj = $i;
     } elseif ($o == "decodificar"){
@@ -93,7 +94,7 @@ function establecerMensaje($o, $i){ // ALGO PASA ACA... NO TOMA 'decodificar'
 
 }
 
-function decodificar($cripto){ 
+function decodificar($cripto){ // TOKENIZAR
     $cripto = str_replace("1-", "a-", $cripto);
     $cripto = str_replace("2-", "b-", $cripto);
     $cripto = str_replace("3-", "c-", $cripto);
