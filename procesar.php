@@ -95,32 +95,35 @@ function establecerMensaje($o, $i){
 }
 
 function decodificar($cripto){ // TOKENIZAR
-    $cripto = str_replace("1-", "a-", $cripto);
-    $cripto = str_replace("2-", "b-", $cripto);
-    $cripto = str_replace("3-", "c-", $cripto);
-    $cripto = str_replace("4-", "d-", $cripto);
-    $cripto = str_replace("5-", "e-", $cripto);
-    $cripto = str_replace("6-", "f-", $cripto);
-    $cripto = str_replace("7-", "g-", $cripto);
-    $cripto = str_replace("8-", "h-", $cripto);
-    $cripto = str_replace("9-", "i-", $cripto);
-    $cripto = str_replace("10-","j-", $cripto);
-    $cripto = str_replace("11-","k-", $cripto);
-    $cripto = str_replace("12-","l-", $cripto);
-    $cripto = str_replace("13-","m-", $cripto);
-    $cripto = str_replace("14-","n-", $cripto);
-    $cripto = str_replace("16-","o-", $cripto);
-    $cripto = str_replace("17-","p-", $cripto);
-    $cripto = str_replace("18-","q-", $cripto);
-    $cripto = str_replace("19-","r-", $cripto);
-    $cripto = str_replace("20-","s-", $cripto);
-    $cripto = str_replace("21-","t-", $cripto);
-    $cripto = str_replace("22-","u-", $cripto);
-    $cripto = str_replace("23-","v-", $cripto);
-    $cripto = str_replace("24", "w-", $cripto);
-    $cripto = str_replace("25-","x-", $cripto);
-    $cripto = str_replace("15-","y-", $cripto);
-    $cripto = str_replace("26-","z-", $cripto);
+    //Se tokeniza con: explode("-", $cripto);
+    // el orden de ejecucion es secuencial, por tanto se procesan los de dos digitos primero. De lo contrario hay errores.
+    $cripto = str_replace("10-","j", $cripto);
+    $cripto = str_replace("11-","k", $cripto);
+    $cripto = str_replace("12-","l", $cripto);
+    $cripto = str_replace("13-","m", $cripto);
+    $cripto = str_replace("14-","n", $cripto);
+    $cripto = str_replace("16-","o", $cripto);
+    $cripto = str_replace("17-","p", $cripto);
+    $cripto = str_replace("18-","q", $cripto);
+    $cripto = str_replace("19-","r", $cripto);
+    $cripto = str_replace("20-","s", $cripto);
+    $cripto = str_replace("21-","t", $cripto);
+    $cripto = str_replace("22-","u", $cripto);
+    $cripto = str_replace("23-","v", $cripto);
+    $cripto = str_replace("24", "w", $cripto);
+    $cripto = str_replace("25-","x", $cripto);
+    $cripto = str_replace("15-","y", $cripto);
+    $cripto = str_replace("26-","z", $cripto);
+    $cripto = str_replace("1-", "a", $cripto);
+    $cripto = str_replace("2-", "b", $cripto);
+    $cripto = str_replace("3-", "c", $cripto);
+    $cripto = str_replace("4-", "d", $cripto);
+    $cripto = str_replace("5-", "e", $cripto);
+    $cripto = str_replace("6-", "f", $cripto);
+    $cripto = str_replace("7-", "g", $cripto);
+    $cripto = str_replace("8-", "h", $cripto);
+    $cripto = str_replace("9-", "i", $cripto);
+    
     return $cripto;
 }
 
