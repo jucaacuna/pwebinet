@@ -1,26 +1,51 @@
 header{
-    text-align: center;
+    text-align: left;
     background-color: aquamarine;
     margin: 0%;
-    padding: 0%;
+    padding: 1%;
 }
 
 nav{
-    background-color: aqua;
+    background-color: rgb(204, 221, 221);
     text-align: center;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 24px;
     margin: 0%;
-    padding: 0%;
+    padding: 1%;
+    a{  /* Anidamiento CSS*/
+        color: rgb(93, 89, 89);
+        
+    }
+    a:hover {
+        background: #c0f09e;
+        font-size: 26px;
+    }
 }
 
-ul > li {
+
+ul > li { /*Afecta todos los li contenidos en un ul, en primer nivel. Hijo directo*/
     display: inline;
     list-style: none;
 
 }
 
-footer{
+main {
+    background-color: rgb(243, 138, 138);
+    margin: 0%;
+    padding: 0%;
+}
+
+main article { /*Afecta todos los article contenidos en un main, a cualquier nivel.*/
+    margin: 1%;
     padding: 1%;
-    border: 1%;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+footer{
+    margin: 0%;
+    padding: 1%;
+    border: 0%;
     background-color: antiquewhite;
     align-items: center;
 }

@@ -10,7 +10,7 @@
     <header>
         <h1>A1Z26 </h1>
     </header>
-    <?php require 'miMenu.php'; ?>
+    <?php require_once 'miMenu.php'; ?>
     <main>
 		<article>
 			<h2>El algoritmo</h2>
@@ -18,7 +18,7 @@
 			<p>No hay clave. En este algoritmo no existe clave de cifrado.</p>
             <p>Debilidades del algoritmo: es fragil al analisis de incidencias. Es decir, sabiendo la frecuencia con la que aparecen las letras en el idioma espanol, se puede analizar el criptograma para buscar la mismas frecuencias. Para dejar esto en evidencia, se incluyo un conteo de las incidencias de las letras en el mensaje  de los numeros en el criptograma. Como se podra observar, la relacion es clara. En conclusion, el algoritmo es muy debil ante este ataque.</p>
 		</article>
-        <main>
+        
 		<article>
 			<h2>La implementacion</h2>
             <p>Este mismo algoritmo fue realizdo en <a href=""> Java </a>, pero con un enfoque orientado a objetos. En este caso, aunque PHP permite trabajar con objetos, se hizo un abordaje desde el paradigma estructurado. </p>
@@ -35,7 +35,7 @@
         <input type="submit" value="enviar">
         </form>
         </article>
-        
-    
+        </main>   
+    <?php require_once 'miFooter.php'; ?>
 </body>
 </html>
