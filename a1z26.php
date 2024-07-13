@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>A1Z26</title>
     <link rel="stylesheet" href="./css/estilo.css"> 
 </head>
 <body>
@@ -27,15 +27,17 @@
             
 		</article>
         <article>
-        <form method="post" action="procesar.php">
+        <form method="post" action="a1z26.php">
         Ingrese el texto a codificar:
         <input type="text" name="input" maxlength="200" size="100" autocomplete="off" placeholder='AQUI VA EL MENSAJE A ENCRIPTAR'>
         Codificar<input type="radio" name="opcion" value="encriptar" checked = "checked">
         Decodificar<input type="radio" name="opcion" value="decodificar">
         <input type="submit" value="enviar">
         </form>
+
+        <?php require_once 'procesar.php';?>
         </article>
-        </main>   
+    </main>
     <?php require_once 'miFooter.php'; ?>
 </body>
 </html>

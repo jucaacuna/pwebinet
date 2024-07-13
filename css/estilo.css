@@ -13,11 +13,10 @@ nav{
     font-size: 24px;
     margin: 0%;
     padding: 1%;
-    a{  /* Anidamiento CSS*/
-        color: rgb(93, 89, 89);
-        
+    & a{  /* Anidamiento CSS */
+        color: rgb(93, 89, 89);  
     }
-    a:hover {
+    & a:hover {
         background: #c0f09e;
         font-size: 26px;
     }
@@ -33,13 +32,16 @@ ul > li { /*Afecta todos los li contenidos en un ul, en primer nivel. Hijo direc
 main {
     background-color: rgb(243, 138, 138);
     margin: 0%;
-    padding: 0%;
+    padding: 1%;
 }
 
 main article { /*Afecta todos los article contenidos en un main, a cualquier nivel.*/
     margin: 1%;
     padding: 1%;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    &:hover { /* Anidamiento CSS. El selector anidado NO debe comenzar con nombre de identificador. Debe agregar & al inicio.*/
+        box-shadow: 0 3px 5px #1528d3;
+    }
 }
 
 footer{

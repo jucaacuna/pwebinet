@@ -1,19 +1,15 @@
 <?php
 // ############################################### VARIABLES #######################################
 
-$input = $_POST['input']; //el array $_POST[] tiene todos los elementos recibidos por metodo POST. Se corresponde la clave en el array con el nombre de la variable en el formulario.
-$input = sanitizarInput($input);
-$mensaje = "";
-$criptograma = "";
-$opcion = $_POST['opcion'];
-$tiempo = date("d/m/Y, H:i", time());
+ //el array $_POST[] tiene todos los elementos recibidos por metodo POST. Se corresponde la clave en el array con el nombre de la variable en el formulario.
+
+
 
 // ############################################### SECUENCIA DE CONTROL DEL PROGRAMA ###############
 
 
-$mensaje = establecerMensaje($opcion, $input);
-$criptograma = encriptar($mensaje);
-imprimir($mensaje, $criptograma, $tiempo, $opcion);
+principal();
+
 
 
 // ############################################### FUNCIONES #######################################
@@ -51,7 +47,7 @@ function encriptar (string $msj){
     $msj = str_replace(array('t','T'), "21-", $msj);
     $msj = str_replace(array('u','U'), "22-", $msj);
     $msj = str_replace(array('v','V'), "23-", $msj);
-    $msj = str_replace(array('w','W'), "24", $msj);
+    $msj = str_replace(array('w','W'), "24-", $msj);
     $msj = str_replace(array('x','X'), "25-", $msj);
     $msj = str_replace(array('y','Y'), "15-", $msj);
     $msj = str_replace(array('z','Z'), "26-", $msj);
@@ -60,25 +56,25 @@ function encriptar (string $msj){
 
 function imprimir($m, $c, $t, $o) {
     echo "<h2>MODULO DE CIFRADO</h2> 
-Su mensaje: $m <br/>
-Conteo de incidencias: <br/>";
+    Su mensaje: $m <br/>
+    Conteo de incidencias: <br/>";
 
 
-foreach (count_chars($m, 1) as $caracter => $incidencia) {
-    echo "Hay $incidencia incidencias de \"" , chr($caracter) , "\" en el mensaje. <br/>";
- }
- echo "<hr/>";
+    foreach (count_chars($m, 1) as $caracter => $incidencia) {
+        echo "Hay $incidencia incidencias de \"" , chr($caracter) , "\" en el mensaje. <br/>";
+     }
+     echo "<hr/>";
 
-echo "Se traduce como: $c <br />
-Conteo de incidencias: <br/>";
+    echo "Se traduce como: $c <br />
+    Conteo de incidencias: <br/>";
 
 
-foreach (count_chars($c, 1) as $caracter => $incidencia) {
-    echo "Hay $incidencia incidencias de \"" , chr($caracter) , "\" en el mensaje. <br/>";
- }
- echo "<hr/>
- Realizado: $t <br />
- Usted selecciono la opcion: $o";
+    foreach (count_chars($c, 1) as $caracter => $incidencia) {
+        echo "Hay $incidencia incidencias de \"" , chr($caracter) , "\" en el mensaje. <br/>";
+     }
+     echo "<hr/>
+     Realizado: $t <br />
+     Usted selecciono la opcion: $o.";
 
 
 }
@@ -128,5 +124,17 @@ function decodificar($cripto){ // TOKENIZAR
 }
 
 
-
+function principal(){
+    if (isset($_POST['input']) & isset($_POST['opcion'])){ // El programa se correo SOLO SI se ingreso texto Y se marco una opcion. Es decir, si no se envio el formulario, no se corre este programa.
+      $input = $_POST['input']; //el array $_POST[] tiene todos los elementos recibidos por metodo POST. Se corresponde la clave en el array con el nombre de la variable en el formulario.
+      $input = sanitizarInput($input);
+      $mensaje = "";
+      $criptograma = "";
+      $opcion = $_POST['opcion'];
+      $tiempo = date("d/m/Y, H:i", time());
+      $mensaje = establecerMensaje($opcion, $input);
+      $criptograma = encriptar($mensaje);
+      imprimir($mensaje, $criptograma, $tiempo, $opcion);
+    }
+}
 ?>

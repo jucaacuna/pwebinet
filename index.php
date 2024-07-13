@@ -15,6 +15,7 @@
         <h1>Criptonotas </h1>
     </header>
     <?php require 'miMenu.php'; ?>
+    <?php require_once 'miFooter.php'; ?>
 </body>
 
 </html>
