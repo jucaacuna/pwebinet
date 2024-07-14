@@ -1,8 +1,4 @@
 <?php
-// ############################################### VARIABLES #######################################
-
- //el array $_POST[] tiene todos los elementos recibidos por metodo POST. Se corresponde la clave en el array con el nombre de la variable en el formulario.
-
 
 
 // ############################################### SECUENCIA DE CONTROL DEL PROGRAMA ###############
@@ -14,9 +10,9 @@ principal();
 
 // ############################################### FUNCIONES #######################################
 
-//Esta funcion es pensando en la seguridad... para que no me joda el usuario.
+//Esta funcion es pensando en la seguridad... para que el usuario no inyecte codigo en el string.
 //Fundamentar con datos.
-function sanitizarInput($var){
+function validarInput($var){
 
     $var = strip_tags($var); // le saca las etiquetas html
     $var = htmlentities($var); // si quedo alguna etiqueta, la transforma para que no sea mas una etqueta.
@@ -54,10 +50,12 @@ function encriptar (string $msj){
     return $msj;
 }
 
-function imprimir($m, $c, $t, $o) {
-    echo "<h2>MODULO DE CIFRADO</h2> 
-    Su mensaje: $m <br/>
-    Conteo de incidencias: <br/>";
+function imprimir($m, $c, $t, $o) { /* El output del algotimo queda contenido en un div, inexistente antes de procesar.*/
+    echo "
+    <div id=\"salidaAlgoritmo\"> 
+    <h2>MODULO DE CIFRADO</h2> 
+    Su mensaje: <strong> $m </strong> <br/><br/>
+    Conteo de incidencias en el mensaje: <br/>"; 
 
 
     foreach (count_chars($m, 1) as $caracter => $incidencia) {
@@ -65,8 +63,8 @@ function imprimir($m, $c, $t, $o) {
      }
      echo "<hr/>";
 
-    echo "Se traduce como: $c <br />
-    Conteo de incidencias: <br/>";
+    echo "Criptograma: <strong> $c </strong><br/><br/>
+    Conteo de incidencias en el criptograma: <br/>";
 
 
     foreach (count_chars($c, 1) as $caracter => $incidencia) {
@@ -74,13 +72,14 @@ function imprimir($m, $c, $t, $o) {
      }
      echo "<hr/>
      Realizado: $t <br />
-     Usted selecciono la opcion: $o.";
+     Usted selecciono la opcion: $o.
+     </div>";
 
 
 }
 
 function establecerMensaje($o, $i){
-    if ($o == "encriptar") {
+    if ($o == "codificar") {
         $msj = $i;
     } elseif ($o == "decodificar"){
         $msj = decodificar($i);
@@ -127,7 +126,7 @@ function decodificar($cripto){ // TOKENIZAR
 function principal(){
     if (isset($_POST['input']) & isset($_POST['opcion'])){ // El programa se correo SOLO SI se ingreso texto Y se marco una opcion. Es decir, si no se envio el formulario, no se corre este programa.
       $input = $_POST['input']; //el array $_POST[] tiene todos los elementos recibidos por metodo POST. Se corresponde la clave en el array con el nombre de la variable en el formulario.
-      $input = sanitizarInput($input);
+      $input = validarInput($input);
       $mensaje = "";
       $criptograma = "";
       $opcion = $_POST['opcion'];

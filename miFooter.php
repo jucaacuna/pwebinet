@@ -7,7 +7,7 @@ echo
         <a href='mailto:yo@yo.uy'>email</a>.<br>
         Direccion: Canelones, Uruguay.<br>
         </address> 
-        <p> Usted nos visita desde: {$_SERVER['SERVER_ADDR']} </p> 
+        <p> Estamos funcionando desde: {$_SERVER['SERVER_ADDR']} </p> 
     </footer>";
     /* Con {} se contiene la variable dentro del string. Y con \" se puede escapar para poder usar la comilla como parte del contenido del String.*/
 

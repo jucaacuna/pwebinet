@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php require 'miHead.php'; ?>
     <title>A1Z26</title>
-    <link rel="stylesheet" href="./css/estilo.css"> 
 </head>
 <body>
     <header>
@@ -30,12 +28,13 @@
         <form method="post" action="a1z26.php">
         Ingrese el texto a codificar:
         <input type="text" name="input" maxlength="200" size="100" autocomplete="off" placeholder='AQUI VA EL MENSAJE A ENCRIPTAR'>
-        Codificar<input type="radio" name="opcion" value="encriptar" checked = "checked">
+        Codificar<input type="radio" name="opcion" value="codificar" checked = "checked">
         Decodificar<input type="radio" name="opcion" value="decodificar">
         <input type="submit" value="enviar">
         </form>
-
+        
         <?php require_once 'procesar.php';?>
+        
         </article>
     </main>
     <?php require_once 'miFooter.php'; ?>
