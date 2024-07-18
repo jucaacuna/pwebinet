@@ -1,8 +1,8 @@
 header{
     text-align: left;
-    background-color: aquamarine;
+    background-color: rgba(187, 243, 225, 0.915);
     margin: 0%;
-    padding: 1%;
+    padding: 0%;
 }
 
 nav{
@@ -30,7 +30,7 @@ ul > li { /*Afecta todos los li contenidos en un ul, en primer nivel. Hijo direc
 }
 
 main {
-    background-color: rgb(243, 138, 138);
+    background-color: hsla(0, 70%, 91%, 0.867);
     margin: 0%;
     padding: 1%;
 }
@@ -43,16 +43,28 @@ main article { /*Afecta todos los article contenidos en un main, a cualquier niv
     align-items: baseline;
     line-height: 2;
     &:hover { /* Anidamiento CSS. El selector anidado NO debe comenzar con nombre de identificador. Debe agregar & al inicio.*/
-        box-shadow: 0 3px 5px #1528d3;
+        box-shadow: 0 3px 5px #8690ed;
     }
+}
+
+main h1 {
+    margin: 1%;
+    padding: 1%;
+    font-family: 'Courier New', Courier, monospace;
+    align-items: baseline;
+    line-height: 2;
 }
 
 footer{
     margin: 0%;
     padding: 1%;
     border: 0%;
-    background-color: antiquewhite;
+    background-color: #f2dff5da;
     align-items: center;
+}
+#ips {
+    text-align: center;
+    border: 1px solid black;
 }
 
 #salidaAlgoritmo {

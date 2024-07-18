@@ -1,11 +1,11 @@
 <?php
 /*Este modulo es para contener el header y menu de la pagina y no tener que sobreescribirlo en cada subpagina. */
-echo 
-    "<header>
-        <h1> {$titulo} </h1>
-    </header>";
+
 echo
-    '<nav>
+    '<header>
+        Cripto::uy
+    </header>
+    <nav>
         <ul>
             <li> <a href="./">INICIO</a></li>
             <li> <a href="./cesar.php"> CESAR</a></li>

@@ -3,12 +3,13 @@
 echo 
     "<footer>
         <address>
-        Contacto:
-        <a href='mailto:yo@yo.uy'>email</a>.<br>
+        Autor: Juan Acuña.<br>
         Direccion: Canelones, Uruguay.<br>
         </address> 
-        <p> Estamos funcionando desde: {$_SERVER['SERVER_ADDR']} </p> 
-        <p> Usted nos visita desde: {$_SERVER['REMOTE_ADDR']}</p>
+        <ul id = \"ips\">
+            <li> Estamos funcionando desde: {$_SERVER['SERVER_ADDR']} </li> 
+            <li> Usted nos visita desde: {$_SERVER['REMOTE_ADDR']}</li>
+        </ul>
     </footer>";
     /* Con {} se contiene la variable dentro del string. Y con \" se puede escapar para poder usar la comilla como parte del contenido del String.*/
 

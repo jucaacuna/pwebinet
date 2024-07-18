@@ -12,15 +12,18 @@
     <main>
 		<article>
 			<h2>El proyecto</h2>
-			<p>Este sitio surge como ejercicio academico a implementacion en php de metodos de criptografia clasica, como primera aproximacion a la seguridad informatica.</p>
+			<p>Este sitio surge como ejercicio académico a implementacion en php de métodos de criptografia clásica, como primera aproximación a la seguridad informática.</p>
 			<p>El sitio esta programado "a mano" sin ningun framework, haciendo uso unicamente de PHP, HTML y CSS.</p>
-            <p>El codigo de todo el sitio se puede encontrar en: <a href="https://github.com/jucaacuna/pwebinet" target="_blank" >Github</a>.</p>
+            <p>El código de todo el sitio se puede encontrar en: <a href="https://github.com/jucaacuna/pwebinet" target="_blank" >Github</a>.</p>
 		</article>
         <article>
 			<h2>Criptografia</h2>
-			<p>La criptografia... lalala</p>
-			<p>Los algoritmos lalala.</p>
-            <p>.</p>
+			<p>La criptografía es la práctica de codificar información de manera que no se pueda decodificar sin acceder al método o a la clave requerida.</p>
+			<p>La criptografía consta de dos operaciones principales:
+                <ol>
+            <li> el cifrado, que transforma la información de texto sin formato en texto cifrado mediante una clave de cifrado.</li>
+            <li> descifrado, que transforma el texto cifrado en texto sin formato mediante una clave de descifrado.</li></p>
+                </ol>
 		</article>
         
     </main>
