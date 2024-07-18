@@ -10,8 +10,7 @@ principal();
 
 // ############################################### FUNCIONES #######################################
 
-//Esta funcion es pensando en la seguridad... para que el usuario no inyecte codigo en el string.
-//Fundamentar con datos.
+//Esta funcion es pensando en la seguridad... para que el usuario no inyecte código en el string.
 function validarInput($var){
 
     $var = strip_tags($var); // le saca las etiquetas html
@@ -72,7 +71,7 @@ function imprimir($m, $c, $t, $o) { /* El output del algotimo queda contenido en
      }
      echo "<hr/>
      Realizado: $t <br />
-     Usted selecciono la opcion: $o.
+     Usted seleccionó la opción: $o.
      </div>";
 
 

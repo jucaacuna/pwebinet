@@ -8,6 +8,7 @@ echo
         Direccion: Canelones, Uruguay.<br>
         </address> 
         <p> Estamos funcionando desde: {$_SERVER['SERVER_ADDR']} </p> 
+        <p> Usted nos visita desde: {$_SERVER['REMOTE_ADDR']}</p>
     </footer>";
     /* Con {} se contiene la variable dentro del string. Y con \" se puede escapar para poder usar la comilla como parte del contenido del String.*/
 

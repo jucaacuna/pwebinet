@@ -39,6 +39,9 @@ main article { /*Afecta todos los article contenidos en un main, a cualquier niv
     margin: 1%;
     padding: 1%;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 16px;
+    align-items: baseline;
+    line-height: 2;
     &:hover { /* Anidamiento CSS. El selector anidado NO debe comenzar con nombre de identificador. Debe agregar & al inicio.*/
         box-shadow: 0 3px 5px #1528d3;
     }

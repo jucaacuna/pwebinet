@@ -4,14 +4,10 @@
 
 <head>
     <?php require 'miHead.php'; ?>
-    <title>INICIO</title>
+    <title><?php echo $titulo="INICIO"?></title>
 </head>
 
 <body>
-
-    <header>
-        <h1>Criptonotas </h1>
-    </header>
     <?php require 'miMenu.php'; ?>
     <main>
 		<article>
