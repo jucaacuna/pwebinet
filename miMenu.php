@@ -8,7 +8,6 @@ echo
     <nav>
         <ul>
             <li> <a href="./">INICIO</a></li>
-            <li> <a href="./cesar.php"> CESAR</a></li>
             <li> <a href="./a1z26.php"> A1Z26</a></li>
         </ul>
     </nav>';
