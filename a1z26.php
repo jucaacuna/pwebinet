@@ -13,7 +13,7 @@
 			<p>El <strong>A1Z26</strong> es un algoritmo de cifrado por sustitución. A cada elemento del alfabeto del mensaje se lo substituye por uno del alfabeto del criptograma. Hay una correspondencia entre ambos. La existencia de dos alfabetos distintos nos lleva a pensar que es polialfabético, sinembargo siempre se utiliza el el mismo alfabeto para cifrar. Por tanto decimos que es monoalfabético. </p>
             <p>El alfabeto(mensaje) es: A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z y el alfabeto(criptograma) es: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26.</p>
 			<p>No hay clave. En este algoritmo no existe clave de cifrado.</p>
-            <p>Debilidades del algoritmo: es fragil al analisis de incidencias. Es decir, sabiendo la frecuencia con la que aparecen las letras en el idioma espanol, se puede analizar el criptograma para buscar la mismas frecuencias. Para dejar esto en evidencia, se incluyo un conteo de las incidencias de las letras en el mensaje  de los numeros en el criptograma. Como se podra observar, la relacion es clara. En conclusion, el algoritmo es muy debil ante este ataque.</p>
+            <p>Debilidades del algoritmo: es fragil al análisis de incidencias. Es decir, sabiendo la frecuencia con la que aparecen las letras en el idioma español, se puede analizar el criptograma para buscar la mismas frecuencias. Para dejar esto en evidencia, se incluyo un conteo de las incidencias de las letras en el mensaje  de los numeros en el criptograma. Como se podra observar, la relacion es clara. En conclusion, el algoritmo es muy debil ante este ataque.</p>
 		</article>
         
 		<article>
