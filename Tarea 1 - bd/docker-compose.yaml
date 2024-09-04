@@ -1,0 +1,33 @@
+version: "3.1" #version de compose
+
+services:
+  basedatos:
+    image: mysql/mysql-server
+    ports: 
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: jaja 
+      MYSQL_ROOT_HOST: "%"
+    networks:
+      - default
+  www:
+    # construye desde un Dockerfield
+    build: .
+    ports: 
+      - "80:80"
+    volumes:
+      - ./src/www:/var/www/html
+    links:
+      #estos son los otros servicios a los que accedera este.
+      - basedatos
+    networks:
+      - default
+  phpmyadmin:
+    image: phpmyadmin
+    links: 
+      - basedatos:db
+    ports:
+      - 8000:80
+    environment:
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: jaja
