@@ -8,6 +8,7 @@ echo
     <nav>
         <ul>
             <li> <a href="./">INICIO</a></li>
+            <li> <a href="./formulario.php">FORMULARIO</a></li>
         </ul>
     </nav>';
     

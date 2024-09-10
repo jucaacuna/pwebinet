@@ -1,7 +1,8 @@
 version: "3.1" #version de compose
 
 services:
-  basedatos:
+  serverBD:
+    # para consultarlo se usa este nombre y no localhost.
     image: mysql/mysql-server
     ports: 
       - "3306:3306"
@@ -19,13 +20,13 @@ services:
       - ./src/www:/var/www/html
     links:
       #estos son los otros servicios a los que accedera este.
-      - basedatos
+      - serverBD
     networks:
       - default
   phpmyadmin:
     image: phpmyadmin
     links: 
-      - basedatos:db
+      - serverBD:db
     ports:
       - 8000:80
     environment:
