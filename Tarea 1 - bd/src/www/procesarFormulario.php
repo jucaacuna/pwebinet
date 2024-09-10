@@ -2,7 +2,7 @@
 
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-$instanciaConexion = mysqli_connect("basedatos", "root", "jaja", "escuela");
+$instanciaConexion = mysqli_connect("serverBD", "root", "jaja", "escuela");
 
 
 $nombre = $_POST['nombre'];

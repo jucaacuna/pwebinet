@@ -8,7 +8,8 @@ echo
     <nav>
         <ul>
             <li> <a href="./">INICIO</a></li>
-            <li> <a href="./formulario.php">FORMULARIO</a></li>
+            <li> <a href="./formulario.php">ALTA</a></li>
+            <li> <a href="./consulta.php">CONSULTA</a></li>
         </ul>
     </nav>';
     
