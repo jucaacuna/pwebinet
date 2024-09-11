@@ -11,7 +11,7 @@
 <?php require 'miMenu.php'; ?>
     <main>
         <h2>Formulario de Registro</h2>
-        <form action="procesarFormulario.php" method="post">
+        <form action="formulario.php" method="post">
             <!-- Campo de Nombre -->
             <label for="nombre">Nombre:</label><br>
             <input type="text" id="nombre" name="nombre" required><br><br>
@@ -31,7 +31,7 @@
             <!-- Botón de Enviar -->
             <input type="submit" value="Registrar">
         </form>
-        
+        <?php require_once 'procesarFormulario.php';?>
     </main>
 
     <?php require_once 'miFooter.php'; ?>

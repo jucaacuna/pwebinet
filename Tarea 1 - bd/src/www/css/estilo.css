@@ -75,3 +75,15 @@ input {
     border: 0;
     box-shadow: 0 0 20px;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 1%;
+    text-align: center;
+  }

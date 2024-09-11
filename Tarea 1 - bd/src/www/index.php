@@ -15,7 +15,6 @@
 			<p>Arrancando otro ejercicio...</p>
             <p>El código de todo el sitio se puede encontrar en: <a href="https://github.com/jucaacuna/pwebinet" target="_blank" >Github</a>.</p>
 		</article>
-        <article>
         
     </main>
 
