@@ -1,23 +1,17 @@
-<!DOCTYPE html>
-<html lang="es">
-<html>
+<?php 
 
-<head>
-    <?php require 'miHead.php'; ?>
-    <title><?php echo $titulo="CONSULTA"?></title>
-</head>
 
-<body>
-    <?php require 'miMenu.php'; ?>
-    <main>
-		<article>
-		<?php
+ if (isset($_POST['nombre'])){
+    mensaje();
+ }
+
+function mensaje(){
     try {
         mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
         $instanciaConexion = mysqli_connect("serverBD", "root", "jaja", "escuela");
 
-        $consultaBD = "SELECT * FROM estudiantes";
+        $consultaBD = "SELECT * FROM estudiantes WHERE nombre = '{$_POST['nombre']}'";
 
         $resultadoConsulta = mysqli_query($instanciaConexion, $consultaBD);
         echo '
@@ -49,12 +43,7 @@
       } catch (Exception $e) {
         echo 'Excepción capturada. PASO ALGO CON LA BASE DE DATOS. ',  $e->getMessage(), "\n";
     }
-      ?>
-    </article>
-        
-    </main>
+}
 
-    <?php require_once 'miFooter.php'; ?>
-</body>
 
-</html>
+?>

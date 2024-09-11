@@ -33,6 +33,7 @@ main {
     background-color: hsla(0, 70%, 91%, 0.867);
     margin: 0%;
     padding: 1%;
+    
 }
 
 main article { /*Afecta todos los article contenidos en un main, a cualquier nivel.*/
@@ -67,13 +68,14 @@ footer{
     border: 1px solid black;
 }
 
-/*      FORMULARIO      */
+/*      CONSULTAS      */
 
 input {
     border-radius: 25px;
     font-size: 16px;
     border: 0;
     box-shadow: 0 0 20px;
+    margin: 1%;
 }
 
 table {
@@ -87,3 +89,15 @@ th, td {
     padding: 1%;
     text-align: center;
   }
+
+form { 
+
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}

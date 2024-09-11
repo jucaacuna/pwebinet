@@ -19,7 +19,7 @@ function mensaje(){
         $resultadoConsulta = mysqli_query($instanciaConexion, $consultaBD);
 
         if($resultadoConsulta){
-            print("SE INGRESO INFORMACION CON EXITO");
+            print("SE INGRESO INFORMACION CON ÉXITO");
 
         }
 

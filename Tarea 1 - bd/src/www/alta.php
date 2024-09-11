@@ -4,14 +4,14 @@
 
 <head>
     <?php require 'miHead.php'; ?>
-    <title><?php echo $titulo="INICIO"?></title>
+    <title><?php echo $titulo="ALTA"?></title>
 </head>
 <body>
 
 <?php require 'miMenu.php'; ?>
     <main>
         <h2>Formulario de Registro</h2>
-        <form action="formulario.php" method="post">
+        <form action="alta.php" method="post">
             <!-- Campo de Nombre -->
             <label for="nombre">Nombre:</label><br>
             <input type="text" id="nombre" name="nombre" required><br><br>
