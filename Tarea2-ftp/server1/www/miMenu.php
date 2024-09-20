@@ -8,8 +8,13 @@ echo
     <nav>
         <ul>
             <li> <a href="./">INICIO</a></li>
+            <li> <a href="./listarArchivos.php">LISTAR</a></li>
+            <li> <a href="./subirArchivos.php">CARGAR</a></li>
+
+            
         </ul>
-    </nav>';
+    </nav>
+    ';
     
     
 

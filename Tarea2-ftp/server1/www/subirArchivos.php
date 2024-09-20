@@ -11,13 +11,13 @@
     <?php require 'miMenu.php'; ?>
     <main>
 		<article>
-            <?php
-            $ftp_server = "IP_DEL_SERVIDOR_FTP";
-            $ftp_username = "juan";
-            $ftp_password = "contraseña_de_ftpinet";
 
-
-            ?>
+      <form method="post" enctype="multipart/form-data" action="procesarSubirArchivos.php">
+      Selecciona un archivo:
+      <input type="file" name="fileToUpload" id="fileToUpload">
+      <input type="submit" value="Subir archivo" name="submit">
+      </form>
+ 
 		</article>
         
     </main>

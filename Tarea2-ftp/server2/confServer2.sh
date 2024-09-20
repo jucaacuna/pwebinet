@@ -14,9 +14,8 @@ sudo apt install vsftpd -y
 
 #echo "Ahora configuramos el server ftp "
 #wget direccion del archivo vsftpd.conf en github (CARGAR EL DE SERVER 2 ACTUAL)
-# cambios: descomenté write_enable=yes
 #mv acá para allá y sobreescribir el que está.
-
+# cambios efectivamente realizados: descomenté write_enable=yes
 
 
 echo "Ahora reiniciamos el server ftp "
