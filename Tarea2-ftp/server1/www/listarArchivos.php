@@ -4,7 +4,7 @@
 
 <head>
     <?php require 'miHead.php'; ?>
-    <title><?php echo $titulo="ftp"?></title>
+    <title><?php echo $titulo="Listr archivos"?></title>
 </head>
 
 <body>

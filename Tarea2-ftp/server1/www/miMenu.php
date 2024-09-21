@@ -3,7 +3,7 @@
 
 echo
     '<header>
-        Proyecto::2
+        Actividad Práctica: Integración de Apache y FTP
     </header>
     <nav>
         <ul>
