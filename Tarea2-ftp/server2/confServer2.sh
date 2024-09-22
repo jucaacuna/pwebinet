@@ -4,18 +4,36 @@
 ####################################################################
 #               Srcipt para configurarr el servidor 2              #
 ####################################################################
-
-echo "Ahora actualicemos el índice de software"
-sudo apt update
-
-echo "Ahora instalamos el server ftp "
-sudo apt install vsftpd -y
+# Se debe correr con sudo. 
 
 
-#echo "Ahora configuramos el server ftp "
-#wget direccion del archivo vsftpd.conf en github (CARGAR EL DE SERVER 2 ACTUAL)
-#mv acá para allá y sobreescribir el que está.
-# cambios efectivamente realizados: descomenté write_enable=yes
+echo "0 - configuramos el nombre del server"
+# Es de esperar que el nombre del servidor quede configurado en la instalación,
+# pero puede ser que no haya quedado o que se reutilice una imagen de otra práctica,
+# de ahí la utilidad de este paso.
+hostnamectl set-hostname server2
+
+echo "1 - actualicemos el índice de software"
+# Simplemente para asegurarnos de trabajar con las últimas versiones,
+# al instalar software en los próximos pasos.
+# No instalaremos actualizaciones (upgrade) ya que de ser necesaria algua dependecia,
+# se solicitará durante la instalacción de la app específica.
+apt update
+
+echo "2 -  instalamos el server ftp "
+apt install vsftpd -y
+
+
+echo "3 - configuramos el server ftp "
+# Para evitar el camino de editar el archivo a mano y aspirar a la automatización
+# con este script, se descarga un archivo (configurado y creado como parte del
+# ejercicio) para reemplazar el actual. El único cambio que contiene, de 
+# momento: se descomentó write_enable=yes.  No se crea usuaroi específico para
+# este servicio, ya que podrá usar cualquier usuario del sistema.
+# Esto es inseguro en un ambiente real, pero práctico en nuestro ambiente local
+# y contenido.
+#wget direccion del archivo /etc/vsftpd.conf en github (CARGAR EL DE SERVER 2 ACTUAL)
+mv ./vsftpd.conf /etc/vsftpd.conf
 
 
 echo "Ahora reiniciamos el server ftp "
