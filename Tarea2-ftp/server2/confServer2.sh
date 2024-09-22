@@ -27,12 +27,13 @@ apt install vsftpd -y
 echo "3 - configuramos el server ftp "
 # Para evitar el camino de editar el archivo a mano y aspirar a la automatización
 # con este script, se descarga un archivo (configurado y creado como parte del
-# ejercicio) para reemplazar el actual. El único cambio que contiene, de 
-# momento: se descomentó write_enable=yes.  No se crea usuaroi específico para
+# ejercicio) para reemplazar el actual.
+# El único cambio que contiene, de momento: se descomentó write_enable=yes.  
+# No se crea usuaro específico para
 # este servicio, ya que podrá usar cualquier usuario del sistema.
 # Esto es inseguro en un ambiente real, pero práctico en nuestro ambiente local
 # y contenido.
-#wget direccion del archivo /etc/vsftpd.conf en github (CARGAR EL DE SERVER 2 ACTUAL)
+wget https://github.com/jucaacuna/pwebinet/blob/main/Tarea2-ftp/server2/vsftpd.conf
 mv ./vsftpd.conf /etc/vsftpd.conf
 
 

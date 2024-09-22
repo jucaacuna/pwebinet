@@ -28,7 +28,9 @@ apt install apache2 -y
 echo "3 - cambiamos permisos en /var/www/html para que este usuario sea propietario: "
 # Para poder trabajar en la carpeta raíz desde nuestro usuario, sin necesidad de andar 
 # escalando privilegios con sudo. 
-chown -R $USER:$USER /var/www/html ############### NO HACE CASO EN EL SCRIPT, SI EN TERMINAL.
+# la idea era usar chown -R $USER:$USER /var/www/html para que no sea dependiente de un nombre
+# de usuario en particular, pero no podemos. Aquí un aspecto a mejorar.
+chown -R juan:juan /var/www/html
 
 echo "Ahora instalamos PHP"
 apt install php -y
