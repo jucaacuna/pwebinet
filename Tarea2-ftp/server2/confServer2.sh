@@ -33,7 +33,7 @@ echo "3 - configuramos el server ftp "
 # este servicio, ya que podrá usar cualquier usuario del sistema.
 # Esto es inseguro en un ambiente real, pero práctico en nuestro ambiente local
 # y contenido.
-wget https://github.com/jucaacuna/pwebinet/blob/main/Tarea2-ftp/server2/vsftpd.conf
+wget https://raw.githubusercontent.com/jucaacuna/pwebinet/refs/heads/main/Tarea2-ftp/server2/vsftpd.conf
 mv ./vsftpd.conf /etc/vsftpd.conf
 
 
