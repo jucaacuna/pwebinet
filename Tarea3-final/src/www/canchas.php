@@ -33,11 +33,9 @@ foreach ($resultadoConsulta as $c) {
   print "<article>\n";
   print "   <h2> $c[nombre]</h2>\n";
   print "   <p> $c[descripcion]</p>\n";
-  print '   <img src= "'; // ESTO SE PODRIA HACER EN UNA SOLA LINEA. LAS COMILLAS... SE DEN IMPRIMIR COMILLAS.
-  print "$c[imagen]";
-  print '" />\n';
-
-  print "</article>\n";
+  print '   <img src= "'. "$c[imagen]" . '" />';
+// ESTO SE PODRIA HACER EN UNA SOLA LINEA. LAS COMILLAS... SE DEN IMPRIMIR COMILLAS.
+  print "\n</article>\n";
 }
 
 $instanciaConexion->close();

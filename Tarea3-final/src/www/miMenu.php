@@ -10,8 +10,7 @@ echo
             <li> <a href="./">INICIO</a></li>
             <li> <a href="./canchas.php">CANCHAS</a></li>
             <li> <a href="./canchasLista.php">LISTA CANCHAS</a></li>
-
-            <li> <a href="./disponibilidad.php">DISPONIBILIDAD</a></li>
+            <li> <a href="./reservar.php">RESERVAR</a></li>
         </ul>
     </nav>';
     
