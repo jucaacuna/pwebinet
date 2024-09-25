@@ -9,13 +9,40 @@
 <body>
 <?php require 'miMenu.php'; ?>
 <main>
-  <h1> CANCHAS BIEN PRESENTADAS, CON FOTO. 1 POR ARTICLE</h1>
-  <article>
-			<h2>Cancha 1</h2> <!-- variable en mysql -->
-			<p>Esta cancha, es la mejor de todas.</p> <!-- variable en mysql -->
-      <img src="/imagenes/cancha1.jpg" /> <!-- variable en mysql -->
+<?php    
 
-		</article>
+/*      Crear la conexión       */
+
+$instanciaConexion = new mysqli("serverBD", "root", "jaja", "futbol5");
+
+/* Verificar la conexión   */
+
+if ($instanciaConexion->connect_error) {
+    die("Conexión fallida: " . $instanciaConexion->connect_error); 
+
+}
+
+/* Traemos los datos de las Canchas */
+$sql = "SELECT * FROM Canchas";
+$resultadoConsulta = $instanciaConexion->query($sql);
+
+/* Imprimimos los datos de cada cancha con la siguiente estructura */
+foreach ($resultadoConsulta as $c) {
+    
+
+  print "<article>\n";
+  print "   <h2> $c[nombre]</h2>\n";
+  print "   <p> $c[descripcion]</p>\n";
+  print '   <img src= "'; // ESTO SE PODRIA HACER EN UNA SOLA LINEA. LAS COMILLAS... SE DEN IMPRIMIR COMILLAS.
+  print "$c[imagen]";
+  print '" />\n';
+
+  print "</article>\n";
+}
+
+$instanciaConexion->close();
+?>
+
     </main>
 
     <?php require_once 'miFooter.php'; ?>
