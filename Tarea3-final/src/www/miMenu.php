@@ -9,7 +9,8 @@ echo
         <ul>
             <li> <a href="./">INICIO</a></li>
             <li> <a href="./canchas.php">CANCHAS</a></li>
-            <li> <a href="./canchasLista.php">LISTA CANCHAS</a></li>
+            <li> <a href="./listas.php">LISTAS</a></li>
+            <li> <a href="./registrarCliente.php">REGISTRAR CLIENTE</a></li>
             <li> <a href="./reservar.php">RESERVAR</a></li>
         </ul>
     </nav>';

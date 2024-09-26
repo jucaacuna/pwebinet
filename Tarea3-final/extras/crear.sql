@@ -4,7 +4,7 @@ USE futbol5;
 
 
 CREATE TABLE Clientes (
-    ciCliente INT PRIMARY KEY AUTO_INCREMENT,
+    idCliente INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(100) NOT NULL,
     apellido VARCHAR(100) NOT NULL,
     telefono VARCHAR(20) UNIQUE NOT NULL
@@ -20,11 +20,11 @@ CREATE TABLE Canchas (
 
 CREATE TABLE Reservas (
     id_reserva INT PRIMARY KEY AUTO_INCREMENT,
-    ciCliente INT,
+    idCliente INT,
     idCancha INT,
     fecha_reserva DATE NOT NULL,
     hora_inicio TIME NOT NULL,
     hora_fin TIME NOT NULL,
-    FOREIGN KEY (ciCliente) REFERENCES Clientes(ciCliente),
+    FOREIGN KEY (idCliente) REFERENCES Clientes(idCliente),
     FOREIGN KEY (idCancha) REFERENCES Canchas(idCancha)
 );

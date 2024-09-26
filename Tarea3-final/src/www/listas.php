@@ -30,7 +30,7 @@ if ($instanciaConexion->connect_error) {
 }
 
 
-/* Traemos los datos de la tabla */
+/* Traemos los datos de la tabla Canchas */
 $sql = "SELECT * FROM Canchas";
 $resultadoConsulta = $instanciaConexion->query($sql);
 echo '
@@ -55,6 +55,40 @@ foreach ($resultadoConsulta as $c) {
 }
 echo '</tbody> 
 </table>'; 
+
+
+
+/* Traemos los datos de la tabla Clientes */
+$sql = "SELECT * FROM Clientes";
+$resultadoConsulta = $instanciaConexion->query($sql);
+echo '
+<table>
+<caption> Los clientes </caption>
+  <thead>
+    <tr>
+      <th scope = "col">ID</th>
+      <th scope = "col">Nombre</th>
+      <th scope = "col">Apellido</th>
+      <th scope = "col">Telefono</th>
+    </tr> 
+  </thead>
+  <tbody>';
+foreach ($resultadoConsulta as $c) {
+    
+
+    print "\n<tr>\n";
+    print "   <td> $c[idCliente]</td>\n";
+    print "   <td> $c[nombre]</td>\n";
+    print "   <td> $c[apellido]</td>\n";
+    print "   <td> $c[telefono]</td>\n";
+    print "</tr>\n";
+}
+echo '</tbody> 
+</table>'; 
+
+
+
+
 $instanciaConexion->close();
 ?>
 
