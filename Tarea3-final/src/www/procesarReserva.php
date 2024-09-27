@@ -7,15 +7,37 @@ principal();
 
 
 function principal(){
-    if (isset($_POST['nombre']) & isset($_POST['apellido']) & isset($_POST['telefono']) & isset($_POST['dia'])){ 
+    if (isset($_POST['idCliente']) & isset($_POST['hora_inicio']) & isset($_POST['hora_fin'])){ 
         // El programa se correo SOLO SI se ingreso texto Y se marco una opcion. Es decir, si no se envio el formulario,
         // no se corre este programa.
-      $nombre = $_POST['nombre']; //el array $_POST[] tiene todos los elementos recibidos por metodo POST.
+      $idCliente = $_POST['idCliente']; //el array $_POST[] tiene todos los elementos recibidos por metodo POST.
       // Se corresponde la clave en el array con el nombre de la variable en el formulario.
-      $apellido = $_POST['apellido'];
-      $telefono = $_POST['telefono'];
       $dia = $_POST['dia'];
-      echo "Usted se llama {$nombre} {$apellido}, su numero es {$telefono} y reservo para el dia: {$dia}";
+      $hora_inicio = $_POST['hora_inicio'];
+      $hora_fin = $_POST['hora_fin'];
+      $idCancha = 1;
+      $fecha_reserva = "2024-09-27";
+      
+      echo "Usted es el cliente {$idCliente} y reservo  para el {$dia} de {$hora_inicio} a {$hora_fin}.";
+
+
+        /* Insertamos los datos deL formulario en la tabla Reservas.
+        Esta funcion se podria reciclar ya que aparece varias veces. */
+        $instanciaConexion = new mysqli("serverBD", "root", "jaja", "futbol5");
+
+        $sql = "INSERT INTO Reservas (idCliente, hora_inicio, hora_fin, idCancha, fecha_reserva) 
+                VALUES ('".$idCliente."', '".$hora_inicio."', '".$hora_fin."', '".$idCancha."', '".$fecha_reserva."')";
+
+        if ($instanciaConexion->query($sql) === TRUE) {
+            echo "Cliente registrado correctamente<br>";
+        } else {
+            echo "Error: " . $sql . "<br>" . $instanciaConexion->error;
+        }
+        /* Falta capturar la excepcion para telefono duplicado. */
+    
+        
+    
+    $instanciaConexion->close();
     }
 }
 ?>

@@ -15,26 +15,46 @@
             </h1>
             <form method="post" action="reservar.php">
             Ingrese su nombre: 
-            <input type="text" name="nombre" maxlength="200" size="100" autocomplete="off" placeholder='Juan'>
-            <input type="text" name="apellido" maxlength="200" size="100" autocomplete="off" placeholder='Gonzalez'>
-            <input type="text" name="telefono" maxlength="9" size="" autocomplete="off" placeholder='091 000 000'>
+            <input type="text" name="idCliente" maxlength="9" size="" autocomplete="off" placeholder='00'>
             <!--Seleccion de la cancha -->
             <!-- Una lista de 10 canchas en lista fija o... llamar la lista desde la base de datos. -->
-            <!--Seleccion de los dias -->
-            Lunes<input type="radio" name="dia" value="lunes" checked = "checked">
-            Viernes<input type="radio" name="dia" value="viernes">
-            <!--Seleccion de las horas -->
+            <!--Seleccion de los dias. # Estos dias deberian cargarse de los disponibles-->
+            <select name="dia" id="dia">
+                <option value="Domingo">Domingo</option>
+                <option value="Lunes">Lunes</option>
+                <option value="Martes">Martes</option>
+                <option value="Miercoles">Miercoles</option>
+                <option value="Jueves">Jueves</option>
+                <option value="Viernes">Viernes</option>
+                <option value="Sabado">Sabado</option>
+            </select>
+            <!--Seleccion de las horas. # Luego filtrar por dia y restar ya reservadas. -->
+            <label for="hora_inicio">Hora de inicio</label>
+            <select name="hora_inicio" id="hora_inicio">
+                <option value="16">16:00</option>
+                <option value="17">17:00</option>
+                <option value="18">18:00</option>
+                <option value="19">19:00</option>
+                <option value="20">20:00</option>
+                <option value="21">21:00</option>
+                <option value="22">22:00</option>
+            </select>
+            <label for="hora_fin">Hora de inicio</label>
+            <select name="hora_fin" id="hora_fin">
+                <option value="17">17:00</option>
+                <option value="18">18:00</option>
+                <option value="19">19:00</option>
+                <option value="20">20:00</option>
+                <option value="21">21:00</option>
+                <option value="22">22:00</option>
+                <option value="23">23:00</option>
+            </select>
+
             <input type="submit" value="Reservar">
             </form>
 
             <?php require_once 'procesarReserva.php';?>
-<?php
-// un formulario
-// el formulario desplegaría una lista de opciones de dias y horarios disponibles.
-// restricción, si ese día-fecha ya tiene reserva, que no se cargue previamente en ese lista, para que no 
-// lo vea el formulario.
-// y guardar lo del formulario en la base de datos.
-?>
+
         </article>
         
     </main>
