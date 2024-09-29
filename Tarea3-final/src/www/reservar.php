@@ -19,36 +19,35 @@
             <!--Seleccion de la cancha -->
             <!-- Una lista de 10 canchas en lista fija o... llamar la lista desde la base de datos. -->
             <!--Seleccion de los dias. # Estos dias deberian cargarse de los disponibles-->
-            <select name="dia" id="dia">
-                <option value="Domingo">Domingo</option>
-                <option value="Lunes">Lunes</option>
-                <option value="Martes">Martes</option>
-                <option value="Miercoles">Miercoles</option>
-                <option value="Jueves">Jueves</option>
-                <option value="Viernes">Viernes</option>
-                <option value="Sabado">Sabado</option>
-            </select>
+            <?php
+            $dias=["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
+            print "\n".'<label for="dia">Dia</label>';
+            print "\n".'<select name="dia" id="dia">';
+            foreach($dias as $dia){
+                print "\n".'<option value="'.$dia.'">'.$dia.'</option>'; //mejorar concatenacion #############
+            }
+            print"\n</select>";
+            ?>
+
             <!--Seleccion de las horas. # Luego filtrar por dia y restar ya reservadas. -->
-            <label for="hora_inicio">Hora de inicio</label>
-            <select name="hora_inicio" id="hora_inicio">
-                <option value="16">16:00</option>
-                <option value="17">17:00</option>
-                <option value="18">18:00</option>
-                <option value="19">19:00</option>
-                <option value="20">20:00</option>
-                <option value="21">21:00</option>
-                <option value="22">22:00</option>
-            </select>
-            <label for="hora_fin">Hora de inicio</label>
-            <select name="hora_fin" id="hora_fin">
-                <option value="17">17:00</option>
-                <option value="18">18:00</option>
-                <option value="19">19:00</option>
-                <option value="20">20:00</option>
-                <option value="21">21:00</option>
-                <option value="22">22:00</option>
-                <option value="23">23:00</option>
-            </select>
+            <?php
+            $horas_inicio=["16:00","17:00","18:00","19:00","20:00","21:00","22:00"];
+            print "\n".'<label for="hora_inicio">Hora de inicio</label>';
+            print "\n".'<select name="hora_inicio" id="hora_inicio">';
+            foreach($horas_inicio as $hora){
+                print "\n".'<option value="'.$hora.'">'.$hora.'</option>'; //mejorar concatenacion #############
+            }
+            print"\n</select>";
+            ?>
+            <?php
+            $horas_finalizacion=["17:00","18:00","19:00","20:00","21:00","22:00","23:00"];
+            print "\n".'<label for="hora_finalizacion">Hora de finalizacion</label>';
+            print "\n".'<select name="hora_finalizacion" id="hora_finalizacion">';
+            foreach($horas_finalizacion as $hora){
+                print "\n".'<option value="'.$hora.'">'.$hora.'</option>'; //mejorar concatenacion #############
+            }
+            print"\n</select>";
+            ?>
 
             <input type="submit" value="Reservar">
             </form>
