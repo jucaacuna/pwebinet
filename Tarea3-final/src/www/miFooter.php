@@ -3,11 +3,7 @@
 echo 
     "<footer>
         <address>
-        Autor: Juan Acuña.<br>
+        Autores: Juan Acuña y Carlos González<br>
         </address> 
-        <ul id = \"ips\">
-            <li> Estamos funcionando desde: {$_SERVER['SERVER_ADDR']} </li> 
-            <li> Usted nos visita desde: {$_SERVER['REMOTE_ADDR']}</li> 
-        </ul>
     </footer>";
 ?>

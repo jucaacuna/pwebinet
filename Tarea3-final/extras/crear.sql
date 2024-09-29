@@ -14,6 +14,7 @@ CREATE TABLE Canchas (
     idCancha INT PRIMARY KEY AUTO_INCREMENT, ##--debe ser menor a 11
     nombre VARCHAR(50) NOT NULL,
     descripcion VARCHAR(255),
+    descripcionImagen VARCHAR(255),
     imagen VARCHAR(255),
     gps POINT
 );

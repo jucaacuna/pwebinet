@@ -32,8 +32,8 @@ foreach ($resultadoConsulta as $c) {
 
   print "<article>\n";
   print "   <h2> $c[nombre]</h2>\n";
-  print "   <p> $c[descripcion]</p>\n";
-  print '   <img src= "'. "$c[imagen]" . '" />';
+  print '   <img src= "'. "$c[imagen]" . '" class="cancha-img"/>'."<!-- Imagen de la cancha -->\n";
+  print '   <img src= "'. "$c[descripcionImagen]" . '" class="portada-img"/> '."<!-- Imagen de descripción --> \n"; 
 // ESTO SE PODRIA HACER EN UNA SOLA LINEA. LAS COMILLAS... SE DEN IMPRIMIR COMILLAS.
   print "\n</article>\n";
 }

@@ -3,7 +3,7 @@
 
 echo
     '<header>
-        Encancha2
+        <img src="./imagenes/portada_principal.jpg" alt="Portada Principal de Canchas" class="portada-principal"> <!-- Imagen de portada -->
     </header>
     <nav>
         <ul>

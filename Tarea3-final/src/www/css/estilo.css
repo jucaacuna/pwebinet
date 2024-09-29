@@ -1,103 +1,115 @@
-header{
-    text-align: left;
-    background-color: rgba(187, 243, 225, 0.915);
-    margin: 0%;
-    padding: 0%;
+/* Formato general para la página */
+body {
+    margin: 0; /* Elimina el margen predeterminado del body */
+    padding: 0; /* Elimina el padding predeterminado del body */
+    font-family: Arial, sans-serif; /* Define la fuente para todo el documento */
+    background-color: #181818; /* Fondo más oscuro para la página */
+    color: #fff; /* Define el color del texto como blanco */
 }
 
-nav{
-    background-color: rgb(204, 221, 221);
-    text-align: center;
-    font-family:'Courier New', Courier, monospace;
-    font-weight: bold;
-    font-size: 24px;
-    margin: 0%;
-    padding: 1%;
-    & a{  /* Anidamiento CSS */
-        color: rgb(93, 89, 89);  
-    }
-    & a:hover {
-        background: #c0f09e;
-        font-size: 26px;
-    }
+/* Estilo para la imagen de portada principal */
+.portada-principal {
+    width: 100%; /* La imagen ocupa el 100% del ancho de la pantalla */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* La imagen se comporta como un elemento de bloque */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+header {
+    text-align: center; /* Centra el contenido del header */
+    padding: 20px; /* Añade espacio dentro del header */
+    background-color: #000; /* Fondo negro para el header */
 }
 
-
-ul > li { /*Afecta todos los li contenidos en un ul, en primer nivel. Hijo directo*/
-    display: inline;
-    list-style: none;
-
+nav {
+    text-align: center; /* Centra el contenido del menú */
+    padding: 10px; /* Añade espacio dentro del menú */
+    background-color: #333; /* Fondo gris oscuro para el menú */
 }
 
-main {
-    background-color: hsla(0, 70%, 91%, 0.867);
-    margin: 0%;
-    padding: 1%;
-    
+nav ul {
+    list-style: none; /* Elimina los estilos de lista predeterminados */
+    padding: 0; /* Elimina el padding predeterminado de la lista */
 }
 
-main article { /*Afecta todos los article contenidos en un main, a cualquier nivel.*/
-    margin: 1%;
-    padding: 1%;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 16px;
-    align-items: baseline;
-    line-height: 2;
-    &:hover { /* Anidamiento CSS. El selector anidado NO debe comenzar con nombre de identificador. Debe agregar & al inicio.*/
-        box-shadow: 0 3px 5px #8690ed;
-    }
+nav ul li {
+    display: inline-block; /* Hace que los elementos de la lista se muestren en línea */
+    margin: 0 10px; /* Añade un margen a cada lado del elemento de la lista */
 }
 
-main h1 {
-    margin: 1%;
-    padding: 1%;
-    font-family: 'Courier New', Courier, monospace;
-    align-items: baseline;
-    line-height: 2;
+nav ul li a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: #fff; /* Color del texto del enlace en blanco */
+    padding: 5px 10px; /* Añade padding dentro del enlace */
+    border: 1px solid #fff; /* Añade un borde blanco alrededor del enlace */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #444; /* Fondo gris para el enlace */
 }
 
-footer{
-    margin: 0%;
-    padding: 1%;
-    border: 0%;
-    background-color: #f2dff5da;
-    align-items: center;
-}
-#ips {
-    text-align: center;
-    border: 1px solid black;
+.grid-container {
+    display: flex; /* Utiliza Flexbox para el diseño */
+    flex-wrap: wrap; /* Permite que los artículos se ajusten en filas múltiples */
+    justify-content: space-around; /* Espacio uniforme entre los artículos */
+    padding: 20px; /* Añade padding alrededor del contenedor */
 }
 
-/*      CONSULTAS      */
-
-input {
-    border-radius: 25px;
-    font-size: 16px;
-    border: 0;
-    box-shadow: 0 0 20px;
-    margin: 1%;
+article {
+    border: 1px solid #ddd; /* Borde claro para los artículos */
+    padding: 10px; /* Añade espacio dentro del artículo */
+    margin: 10px; /* Espacio alrededor de cada artículo */
+    display: inline-block; /* Permite que el artículo se ajuste al contenido */
+    vertical-align: top; /* Alinea los artículos en la parte superior */
+    max-width: 300px; /* Ancho máximo del artículo */
+    background-color: #222; /* Fondo oscuro para el artículo */
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.1); /* Añade una ligera sombra alrededor */
+    border-radius: 8px; /* Bordes redondeados */
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid black;
+article h2 {
+    text-align: center; /* Centra el título del artículo */
+    font-size: 1.2em; /* Ajusta el tamaño del texto del título */
+    color: #ffffff; /* Color del título en blanco */
 }
 
-th, td {
-    border: 1px solid black;
-    padding: 1%;
-    text-align: center;
-  }
+article img {
+    width: 100%; /* La imagen ocupa todo el ancho del artículo */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* La imagen se comporta como un bloque */
+    margin-bottom: 10px; /* Añade espacio debajo de la imagen */
+    border-radius: 5px; /* Bordes redondeados */
+}
 
-form { 
+article p {
+    margin: 0; /* Elimina el margen del párrafo */
+    padding: 5px 0; /* Añade padding arriba y abajo */
+    text-align: center; /* Centra el contenido del párrafo */
+}
 
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.portada-img {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: auto; /* Mantiene la proporción */
+    display: block; /* Se comporta como un bloque */
+    margin-bottom: 10px; /* Añade espacio debajo */
+    border-radius: 5px; /* Bordes redondeados */
+}
 
+footer {
+    text-align: center; /* Centra el contenido del footer */
+    padding: 20px; /* Añade espacio dentro del footer */
+    background-color: #333; /* Fondo gris oscuro */
+    color: #fff; /* Color del texto en blanco */
+    font-size: 0.9em; /* Ajusta el tamaño del texto */
+}
+
+/* Estilo para la ampliación de la imagen */
+article img.portada-img {
+    cursor: pointer; /* Cambia el cursor al pasar sobre la imagen */
+    transition: transform 0.3s ease; /* Transición suave cuando la imagen se amplía */
+    max-width: 100%; /* La imagen no excede el ancho del contenedor */
+    height: auto; /* Mantiene la proporción */
+}
+
+article img.portada-img:hover {
+    transform: scale(2); /* Amplía la imagen al doble de su tamaño al pasar el mouse */
+    z-index: 10; /* Asegura que la imagen esté por encima de otros elementos */
+    position: relative; /* Necesario para que el z-index funcione */
 }
