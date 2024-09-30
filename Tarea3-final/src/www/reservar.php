@@ -11,10 +11,9 @@
     <?php require 'miMenu.php'; ?>
     <main>
 	    <article>
-            <h1> PODRIA SER QUE SOLO RESERVEN CLIENTE REGISTRADOS, AUTORIZADOS, YA CHEQUEADOS POR LA ADMINISTRACION. SE LES DA UN PASSWORD Y CON ESO RESERVAN.
-            </h1>
+            <h1> RESERVA DE CANCHAS </h1> <!-- Solo pueden reservar clientes registrados en el sistema. -->
             <form method="post" action="reservar.php">
-            Ingrese su nombre: 
+            Ingrese su id como cliente de la empresa: 
             <input type="text" name="idCliente" maxlength="9" size="" autocomplete="off" placeholder='00'>
             <!--Seleccion de la cancha -->
             <!-- Una lista de 10 canchas en lista fija o... llamar la lista desde la base de datos. -->

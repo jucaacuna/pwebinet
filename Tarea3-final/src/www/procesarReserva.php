@@ -7,14 +7,14 @@ principal();
 
 
 function principal(){
-    if (isset($_POST['idCliente']) & isset($_POST['hora_inicio']) & isset($_POST['hora_fin'])){ 
+    if (isset($_POST['idCliente']) & isset($_POST['hora_inicio']) & isset($_POST['hora_finalizacion'])){ 
         // El programa se correo SOLO SI se ingreso texto Y se marco una opcion. Es decir, si no se envio el formulario,
         // no se corre este programa.
       $idCliente = $_POST['idCliente']; //el array $_POST[] tiene todos los elementos recibidos por metodo POST.
       // Se corresponde la clave en el array con el nombre de la variable en el formulario.
       $dia = $_POST['dia'];
       $hora_inicio = $_POST['hora_inicio'];
-      $hora_fin = $_POST['hora_fin'];
+      $hora_fin = $_POST['hora_finalizacion'];
       $idCancha = 1;
       $fecha_reserva = "2024-09-27";
       
