@@ -21,9 +21,12 @@ function principal(){
       echo "Usted es el cliente {$idCliente} y reservo  para el {$dia} de {$hora_inicio} a {$hora_fin}.";
 
 
-        /* Insertamos los datos deL formulario en la tabla Reservas.
-        Esta funcion se podria reciclar ya que aparece varias veces. */
-        $instanciaConexion = new mysqli("serverBD", "root", "jaja", "futbol5");
+
+        /*      Importar la conexión       */
+
+        require_once 'conexionBD.php'; 
+
+        /* Insertamos los datos deL formulario en la tabla Reservas. */
 
         $sql = "INSERT INTO Reservas (idCliente, hora_inicio, hora_fin, idCancha, fecha_reserva) 
                 VALUES ('".$idCliente."', '".$hora_inicio."', '".$hora_fin."', '".$idCancha."', '".$fecha_reserva."')";

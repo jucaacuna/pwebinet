@@ -16,6 +16,7 @@
             Ingrese su nombre: 
             <input type="text" name="nombre" maxlength="200" size="100" autocomplete="off" placeholder='Juan'>
             <input type="text" name="apellido" maxlength="200" size="100" autocomplete="off" placeholder='Gonzalez'>
+            <!--El html limita el tamanio a 9 digitos, lo que se necesita para un celular en Uruguay -->
             <input type="text" name="telefono" maxlength="9" size="" autocomplete="off" placeholder='091 000 000'>
             <!--Seleccion de la cancha -->
             <!-- Una lista de 10 canchas en lista fija o... llamar la lista desde la base de datos. -->

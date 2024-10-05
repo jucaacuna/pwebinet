@@ -2,12 +2,9 @@
 /* ESTE ES UN SCRIPT PARA CORRER UNA UNICA VEZ PARA CARGAR LOS DATOS DE LAS CANCHAS EN LA BASE DE DATOS. */
 
 
-/*      Crear la conexión       */
+/*      Importar la conexión       */
 
-/* En ejercicios anteriores la conexion se hizo con un enfoque estructurado. Usando mysqli_connect().
- En este, usamos uno enfocado a POO, creando una insancia de la clase mysqli. */
-
-$instanciaConexion = new mysqli("serverBD", "root", "jaja", "futbol5");
+require_once 'conexionBD.php'; 
 
     
 

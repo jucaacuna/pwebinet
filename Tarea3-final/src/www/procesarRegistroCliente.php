@@ -17,10 +17,12 @@ function principal(){
         $telefono = $_POST['telefono'];
         
     
-        /* Insertamos los datos deL formulario en la tabla Clientes.
-        Esta funcion se podria reciclar ya que aparece varias veces. */
-        $instanciaConexion = new mysqli("serverBD", "root", "jaja", "futbol5");
+        
+        /*      Importar la conexión       */
 
+        require_once 'conexionBD.php';
+
+        /* Insertamos los datos deL formulario en la tabla Clientes.*/
         $sql = "INSERT INTO Clientes (nombre, apellido, telefono) 
                     VALUES ('".$nombre."', '".$apellido."', '".$telefono."')";
 

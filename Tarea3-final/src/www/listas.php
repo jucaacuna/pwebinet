@@ -12,12 +12,11 @@
     <main>
         
 <?php
-    /*      Crear la conexión       */
 
-/* En ejercicios anteriores la conexion se hizo con un enfoque estructurado. Usando mysqli_connect().
- En este, usamos uno enfocado a POO, creando una insancia de la clase mysqli. */
 
-$instanciaConexion = new mysqli("serverBD", "root", "jaja", "futbol5");
+/*      Importar la conexión       */
+
+require_once 'conexionBD.php';
 
     
 

@@ -11,9 +11,9 @@
 <main>
 <?php    
 
-/*      Crear la conexión       */
+/*      Importar la conexión       */
 
-$instanciaConexion = new mysqli("serverBD", "root", "jaja", "futbol5");
+require_once 'conexionBD.php';
 
 /* Verificar la conexión   */
 
