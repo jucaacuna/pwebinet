@@ -8,7 +8,7 @@ CREATE TABLE Clientes (
     nombre VARCHAR(100) NOT NULL,
     apellido VARCHAR(100) NOT NULL,
     telefono VARCHAR(20) UNIQUE NOT NULL,
-    password VARCHAR(20) NOT NULL
+    password VARCHAR(255) NOT NULL
 
 );
 
