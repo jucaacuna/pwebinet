@@ -26,8 +26,7 @@ CREATE TABLE Reservas (
     idCliente INT,
     idCancha INT,
     fecha_reserva DATE NOT NULL,
-    hora_inicio TIME NOT NULL,
-    hora_fin TIME NOT NULL,
+    horario ENUM('16:00-17:00','17:00-18:00','18:00-19:00','19:00-20:00','20:00-21:00','21:00-22:00','22:00-23:00') NOT NULL, 
     FOREIGN KEY (idCliente) REFERENCES Clientes(idCliente),
     FOREIGN KEY (idCancha) REFERENCES Canchas(idCancha)
 );

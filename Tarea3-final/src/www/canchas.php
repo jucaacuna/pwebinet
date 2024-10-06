@@ -34,7 +34,7 @@ foreach ($resultadoConsulta as $c) {
   print "   <h2> $c[nombre]</h2>\n";
   print '   <img src= "'. "$c[imagen]" . '" class="cancha-img"/>'."<!-- Imagen de la cancha -->\n";
   print '   <img src= "'. "$c[descripcionImagen]" . '" class="portada-img"/> '."<!-- Imagen de descripción --> \n"; 
-// ESTO SE PODRIA HACER EN UNA SOLA LINEA. LAS COMILLAS... SE DEN IMPRIMIR COMILLAS.
+  // Agregar: un link a un pop up que muestre reservas de estas canchas.
   print "\n</article>\n";
 }
 

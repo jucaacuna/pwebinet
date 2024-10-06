@@ -7,18 +7,21 @@ principal();
 
 
 function principal(){
-    if (isset($_POST['idCliente']) & isset($_POST['hora_inicio']) & isset($_POST['hora_finalizacion']) & isset($_POST['password'])){ 
-        // El programa se correo SOLO SI se ingreso texto Y se marco una opcion. Es decir, si no se envio el formulario,
-        // no se corre este programa.
+    /* El programa se correo SOLO SI se completaron los campos del formulario. */
+    if (isset($_POST['idCliente']) & isset($_POST['horario']) &
+      isset($_POST['password']) &
+        isset($_POST['dia']) & isset($_POST['cancha'])){ 
+        
       $idCliente = $_POST['idCliente'];
       $password = $_POST['password']; // chequear con la base de datos antes de seguir. Login
       $dia = $_POST['dia'];
-      $hora_inicio = $_POST['hora_inicio'];
-      $hora_fin = $_POST['hora_finalizacion'];
-      $idCancha = 1;
-      $fecha_reserva = "2024-09-27";
+      $horario = $_POST['horario'];
+      $idCancha = $_POST['cancha'];
+      $fecha_reserva = $_POST['dia'];
+
+      /* Se procesa la reserva solo si usuario y contrasenia son correctos. */
       if(esta_registrado($idCliente,$password)){
-        echo "Usted es el cliente {$idCliente} y reservo  para el {$dia} de {$hora_inicio} a {$hora_fin}.";
+        echo "Usted es el cliente {$idCliente} y reservo  para el {$dia} en {$horario}.";
 
 
 
@@ -28,8 +31,8 @@ function principal(){
 
         /* Insertamos los datos deL formulario en la tabla Reservas. */
 
-        $sql = "INSERT INTO Reservas (idCliente, hora_inicio, hora_fin, idCancha, fecha_reserva) 
-                VALUES ('".$idCliente."', '".$hora_inicio."', '".$hora_fin."', '".$idCancha."', '".$fecha_reserva."')";
+        $sql = "INSERT INTO Reservas (idCliente, horario, idCancha, fecha_reserva) 
+                VALUES ('".$idCliente."', '".$horario."', '".$idCancha."', '".$fecha_reserva."')";
 
         if ($instanciaConexion->query($sql) === TRUE) {
             echo "Reserva registrada correctamente.<br>";
@@ -46,18 +49,21 @@ function principal(){
  
 }
 
+/* Esta funcion retorna TRUE si existe en la BD ese par usuario y password. Caso contrario, retorna FALSE. */
 function esta_registrado($usuario,$pass){
-    $retorno = false;
+    $retorno = FALSE;
+
     /*      Importar la conexión       */
 
     require 'conexionBD.php';
 
+    /* Capturo caso fallido de conexion*/
     if ($instanciaConexion->connect_error) {
         die("Conexión fallida: " . $instanciaConexion->connect_error); 
     
     } else {
     
-    // RETORNAR TRUE SI EXISTE EN LA BASE DE DATOS
+
     // Consulta SQL para verificar el usuario
     $sql = "SELECT * FROM Clientes WHERE idCliente = ?";
     $stmt = $instanciaConexion->prepare($sql);
@@ -70,7 +76,7 @@ function esta_registrado($usuario,$pass){
         
         // Verificar la contraseña
         if (password_verify($pass, $row['password'])) {
-            $retorno = true;
+            $retorno = TRUE;
 
         } else {
             echo "Contraseña incorrecta.";
@@ -85,7 +91,12 @@ function esta_registrado($usuario,$pass){
     }
     $stmt->close();
     $instanciaConexion->close();
+
     return $retorno;
 
 }
+
+
+
+
 ?>

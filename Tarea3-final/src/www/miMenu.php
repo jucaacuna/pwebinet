@@ -13,7 +13,8 @@ echo
             <li> <a href="./registrarCliente.php">REGISTRAR CLIENTE</a></li>
             <li> <a href="./reservar.php">RESERVAR</a></li>
         </ul>
-    </nav>';
+    </nav>
+    ';
     
     
 
