@@ -15,6 +15,8 @@
             <form method="post" action="reservar.php">
             Ingrese su id como cliente de la empresa: 
             <input type="text" name="idCliente" maxlength="9" size="" autocomplete="off" placeholder='00'>
+            Ingrese su contraseña:
+            <input type="text" name="password" maxlength="10" size="" autocomplete="off" placeholder='password'>
             <!--Seleccion de la cancha -->
             <!-- Una lista de 10 canchas en lista fija o... llamar la lista desde la base de datos. -->
             <!--Seleccion de los dias. # Estos dias deberian cargarse de los disponibles-->

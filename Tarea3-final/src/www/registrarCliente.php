@@ -11,23 +11,22 @@
     <?php require 'miMenu.php'; ?>
     <main>
 	    <article>
-
             <form method="post" action="registrarCliente.php">
             Ingrese su nombre: 
             <input type="text" name="nombre" maxlength="200" size="100" autocomplete="off" placeholder='Juan'>
+            Apellido:
             <input type="text" name="apellido" maxlength="200" size="100" autocomplete="off" placeholder='Gonzalez'>
             <!--El html limita el tamanio a 9 digitos, lo que se necesita para un celular en Uruguay -->
+            Celular
             <input type="text" name="telefono" maxlength="9" size="" autocomplete="off" placeholder='091 000 000'>
             <!--Seleccion de la cancha -->
-            <!-- Una lista de 10 canchas en lista fija o... llamar la lista desde la base de datos. -->
-            <!--Seleccion de las horas -->
-            <input type="submit" value="Reservar">
+            Su contraseña:
+            <input type="text" name="password" maxlength="10" size="" autocomplete="off" placeholder='password'>
+            <input type="submit" value="Registrar">
             </form>
 
             <?php require_once 'procesarRegistroCliente.php';?>
-<?php
 
-?>
         </article>
         
     </main>

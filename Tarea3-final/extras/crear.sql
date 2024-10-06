@@ -7,7 +7,9 @@ CREATE TABLE Clientes (
     idCliente INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(100) NOT NULL,
     apellido VARCHAR(100) NOT NULL,
-    telefono VARCHAR(20) UNIQUE NOT NULL
+    telefono VARCHAR(20) UNIQUE NOT NULL,
+    password VARCHAR(20) NOT NULL
+
 );
 
 CREATE TABLE Canchas (
