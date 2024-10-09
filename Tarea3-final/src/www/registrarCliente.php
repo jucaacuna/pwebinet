@@ -21,7 +21,7 @@
             <input type="text" name="telefono" maxlength="9" size="" autocomplete="off" placeholder='091 000 000'>
             <!--Seleccion de la cancha -->
             Su contraseña:
-            <input type="text" name="password" maxlength="10" size="" autocomplete="off" placeholder='password'>
+            <input type="password" name="password" maxlength="10" size="" autocomplete="off" placeholder='password'>
             <input type="submit" value="Registrar">
             </form>
 

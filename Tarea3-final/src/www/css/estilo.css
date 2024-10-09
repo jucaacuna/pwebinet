@@ -5,6 +5,7 @@ body {
     font-family: Arial, sans-serif; /* Define la fuente para todo el documento */
     background-color: #181818; /* Fondo más oscuro para la página */
     color: #fff; /* Define el color del texto como blanco */
+    
 }
 
 /* Estilo para la imagen de portada principal */
@@ -58,10 +59,12 @@ article {
     margin: 10px; /* Espacio alrededor de cada artículo */
     display: inline-block; /* Permite que el artículo se ajuste al contenido */
     vertical-align: top; /* Alinea los artículos en la parte superior */
-    max-width: 300px; /* Ancho máximo del artículo */
+    max-width: 350px; /* Ancho máximo del artículo */
     background-color: #222; /* Fondo oscuro para el artículo */
     box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.1); /* Añade una ligera sombra alrededor */
     border-radius: 8px; /* Bordes redondeados */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
 }
 
 article h2 {
@@ -112,4 +115,90 @@ article img.portada-img:hover {
     transform: scale(2); /* Amplía la imagen al doble de su tamaño al pasar el mouse */
     z-index: 10; /* Asegura que la imagen esté por encima de otros elementos */
     position: relative; /* Necesario para que el z-index funcione */
+}
+/* Centrar el formulario y ajustar tamaños */
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20px; 
+}
+
+form {
+    background-color: #333; /* Fondo oscuro para el formulario */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    max-width: 500px;
+    width: 85%; /* Asegurar que el formulario ocupe todo el ancho disponible */
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #fff;
+}
+
+form input[type="text"], form input[type="password"] {
+    width: 85%; /* Ocupa todo el ancho disponible */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    background-color: #222;
+    color: #fff;
+}
+
+form input[type="submit"] {
+    width: 85%;
+    padding: 10px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #555;
+}
+/* Estilo del contenedor de la tabla */
+.table-container {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    min-height: 100vh; /* Ocupa toda la altura de la vista */
+}
+
+/* Estilo de la tabla */
+table {
+    width: 80%; /* Puedes ajustar el ancho de la tabla */
+    margin: 20px 0; /* Espacio superior e inferior */
+    border-collapse: collapse; /* Elimina el espacio entre bordes */
+    background-color: #333; /* Fondo de la tabla */
+}
+
+/* Estilo del encabezado de la tabla */
+th, td {
+    border: 1px solid #fff; /* Borde blanco */
+    padding: 10px; /* Espaciado interno */
+    text-align: left; /* Alineación del texto a la izquierda */
+}
+
+th {
+    background-color: #444; /* Fondo gris oscuro para el encabezado */
+}
+
+/* Estilo de las celdas */
+td {
+    background-color: #222; /* Fondo oscuro para las celdas */
+}
+
+/* Estilo para el caption */
+caption {
+    font-size: 1.5em; /* Tamaño del texto del caption */
+    margin: 10px 0; /* Espacio alrededor del caption */
+    color: #fff; /* Color blanco para el caption */
 }
