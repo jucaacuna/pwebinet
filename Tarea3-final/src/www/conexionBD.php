@@ -1,5 +1,6 @@
 <?php
-/* En este modulo se centraliza la declaracion de la instancia de la conexion. Solo debe de existir esta e importarse desde los distintos puntos a consultar la bd. */
+/* En este modulo se centraliza la declaracion de la instancia de la conexion.
+ Solo debe de existir esta e importarse desde los distintos puntos a consultar la bd. */
 
 
 /*      Crear la conexión       */
