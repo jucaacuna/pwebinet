@@ -33,7 +33,7 @@ foreach ($resultadoConsulta as $c) {
   print "<article>\n";
   print "   <h2> $c[nombre]</h2>\n";
   print '   <img src= "'. "$c[imagen]" . '" class="cancha-img"/>'."<!-- Imagen de la cancha -->\n";
-  print '   <img src= "'. "$c[descripcionImagen]" . '" class="portada-img"/> '."<!-- Imagen de descripción --> \n"; 
+  print '   <img src= "'. "$c[descripcionImagen]" . '" class="portada-img" alt =' . "'$c[descripcion]'" .'/> '."<!-- Imagen de descripción --> \n"; 
   // Agregar: un link a un pop up que muestre reservas de estas canchas.
   print "\n</article>\n";
 }
