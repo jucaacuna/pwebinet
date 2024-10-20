@@ -1,4 +1,6 @@
 <?php
+/*Este modulo es para contener el head de la página y no tener que sobreescribirlo en cada subpágina. */
+
     echo 
         '<meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">

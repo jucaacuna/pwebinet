@@ -1,7 +1,6 @@
 <?php
 /* En este modulo estan todos los metodos necesarios para completar la reserva de una cancha. 
-    Se reciben las comunicaciones POST del formulario. ¿Y los get para pedir datos sobre disponibilidades?
-    Esto último puede estar en otro módulo e importarse desde este...  */
+    Se reciben las comunicaciones POST del formulario.  */
     
 principal();
 

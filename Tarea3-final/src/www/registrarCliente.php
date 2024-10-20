@@ -29,8 +29,8 @@
 
         </article>
         <!-- ######################## ACA EL JAVASCRIPT PARA VALIDAR ANTES DE ENVIAR ######################## -->
-        <!-- Como aprendizaje luego dedicarle dos horas al script: el atributo "id" de las tag input son importantisimas
-         y no son sustituibles por los atributos name. -->
+        <!-- Como aprendizaje luego dedicarle varias horas al script: el atributo "id" de las tag input son importantisimas
+         y no son sustituibles por los atributos "name". -->
         <script> 
             document.getElementById('registroClienteForm').addEventListener('submit', function(event) {
                 /* Obtenemos los valores de los campos */
@@ -48,11 +48,11 @@
 
                 /* Expresión regular para validar el formato del teléfono (9 dígitos)*/
                 /* En Java andamos bien para las expresiones regulares (por Taller 2),
-                 pero en Javascript llev[o un tiempito agarrarle la mano.*/
+                 pero en Javascript llevó un tiempito agarrarle la mano.*/
 
                  var telefonoRegex = /^[0-9]{9}$/;
 
-                /* Validar que el teléfono tenga 9 dígitos*/
+                /* Validar que el teléfono tenga 9 dígitos como yapide el html*/
                 if (!telefonoRegex.test(telefono)) {
                     alert("El número de teléfono debe tener 9 dígitos.");
                     event.preventDefault();

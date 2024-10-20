@@ -1,6 +1,6 @@
-/* Este script gestiona la solicitud de informacion sobre disponibilidad de horas al hacer click en el boton con id 'verDisponibilidad'
+/* Este script gestiona la solicitud de información sobre disponibilidad de horas al hacer click en el boton con id 'verDisponibilidad'
 
-En este modulo TUVIMOS UNA DIFICULTAD IMPORTANTE para enganchar html, php y javascript. Tuvimos que indagar en bibliografia extra.*/
+En este módulo TUVIMOS UNA DIFICULTAD IMPORTANTE para enganchar html, php y javascript. Tuvimos que indagar en bibliografia extra.*/
 
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('verDisponibilidad').addEventListener('click', function() {
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Hacer la solicitud al backend
             // ################################################################################################
-            // Este metodo es el mas complejo. Vale un doce.
+            // Este metodo es el más complejo. Vale un doce.
 
             fetch('listarScript.php', {
                 method: 'POST',

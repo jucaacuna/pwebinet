@@ -10,6 +10,7 @@ function principal(){
     /* isset() Determina si una variable está definida y no es null. No verifica que no sea vacia.
      Si son pasados varios parámetros, entonces isset() devolverá true únicamente si todos los parámetros están definidos. */
     if (isset($_POST['nombre'], $_POST['apellido'], $_POST['telefono'], $_POST['password']) && 
+    
     /* Determina si una variable es considerada vacía. empty() no genera una advertencia si la variable no existe.  */
     !empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['telefono']) && !empty($_POST['password'])){
         

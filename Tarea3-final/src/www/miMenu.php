@@ -1,5 +1,5 @@
 <?php
-/*Este modulo es para contener el header y menu de la pagina y no tener que sobreescribirlo en cada subpagina. */
+/*Este modulo es para contener el header y menu de la página y no tener que sobreescribirlo en cada subpágina. */
 
 echo
     '<header>
