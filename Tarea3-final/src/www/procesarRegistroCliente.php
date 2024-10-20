@@ -1,23 +1,26 @@
 <?php
 /* En este modulo estan todos los metodos necesarios para completar la reserva de una cancha. 
-    Se reciben las comunicaciones POST del formulario. ¿Y los get para pedir datos sobre disponibilidades?
-    Esto último puede estar en otro módulo e importarse desde este...  */
+    Se reciben las comunicaciones POST del formulario. Se valida que esten ingresados todos los campos,
+    de lo contrario no se procesa la reserva.  */
     
-principal();
+
 
 
 function principal(){
-    
-    if (isset($_POST['nombre']) & isset($_POST['apellido']) & isset($_POST['telefono']) & isset($_POST['password'])){
+    /* isset() Determina si una variable está definida y no es null. No verifica que no sea vacia.
+     Si son pasados varios parámetros, entonces isset() devolverá true únicamente si todos los parámetros están definidos. */
+    if (isset($_POST['nombre'], $_POST['apellido'], $_POST['telefono'], $_POST['password']) && 
+    /* Determina si una variable es considerada vacía. empty() no genera una advertencia si la variable no existe.  */
+    !empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['telefono']) && !empty($_POST['password'])){
         
-        // El programa se correo SOLO SI se ingreso texto Y se marco una opcion. Es decir, si no se envio el formulario,
-        // no se corre este programa.
+
+
         $nombre = $_POST['nombre']; //el array $_POST[] tiene todos los elementos recibidos por metodo POST.
         // Se corresponde la clave en el array con el nombre de la variable en el formulario.
         $apellido = $_POST['apellido'];
         $telefono = $_POST['telefono'];
         $password = $_POST['password'];
-        $password = password_hash($password, PASSWORD_DEFAULT); //Usar el algoritmo bcrypt para almacenar la contrasenia de manera segura. Manual php recomienda usar en la bd un campo de 255 caracteres.
+        $password = password_hash($password, PASSWORD_DEFAULT); //Usa el algoritmo bcrypt para almacenar la contrasenia de manera segura. Manual php recomienda usar en la bd un campo de 255 caracteres.
     
         
         /*      Importar la conexión       */
@@ -33,11 +36,12 @@ function principal(){
         } else {
             echo "Error: " . $sql . "<br>" . $instanciaConexion->error;
         }
-        /* Falta capturar la excepcion para telefono duplicado. */
     
         
     
     $instanciaConexion->close();
     }
 }
+
+principal();
 ?>
