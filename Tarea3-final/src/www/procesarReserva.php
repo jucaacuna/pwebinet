@@ -7,7 +7,9 @@ principal();
 
 
 function principal(){
-    /* El programa se correo SOLO SI se completaron los campos del formulario. */
+    /* El programa se correo SOLO SI se completaron los campos del formulario. 
+    No responde si NO se completaron. */
+    
     if (isset($_POST['idCliente']) & isset($_POST['horario']) &
       isset($_POST['password']) &
         isset($_POST['dia']) & isset($_POST['cancha'])){ 
@@ -39,7 +41,6 @@ function principal(){
         } else {
             echo "Error: " . $sql . "<br>" . $instanciaConexion->error;
         }
-        /* Falta capturar la excepcion para telefono duplicado. */
     
         
     

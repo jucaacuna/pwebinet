@@ -14,11 +14,11 @@ CREATE TABLE Clientes (
 
 CREATE TABLE Canchas (
     idCancha INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(50) NOT NULL,
     descripcion VARCHAR(255),
     descripcionImagen VARCHAR(255),
     imagen VARCHAR(255),
-    gps POINT, -- Para una futura implementacion: nos gustaria guardar la ubicacion de cada cancha para luego desplegar un mapa en el frontend.
-    CHECK (idCancha < 11) -- restriccion para cuidar la integridad de la tabla ajustandonos a la letra del ejercicio en cuanto a que las canchas son 10.
+    gps POINT -- Para una futura implementacion: nos gustaria guardar la ubicacion de cada cancha para luego desplegar un mapa en el frontend.
 );
 
 CREATE TABLE Reservas (

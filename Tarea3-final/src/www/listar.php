@@ -1,4 +1,6 @@
 <?php
+/* Este modulo es solo para listar las canchas registradas en el sistema. */
+
 
 function listar_canchas(){
     
@@ -13,7 +15,7 @@ function listar_canchas(){
 
 
     print "\n                ".'<label for="cancha">Canchas</label>';
-    print "\n                ".'<select name="cancha">';
+    print "\n                ".'<select name="cancha" id="cancha">';
     foreach($resultadoConsulta as $cancha){
         print "\n                ".'<option value="'.$cancha['idCancha'].'">'.$cancha['idCancha']." - ".$cancha['nombre'].'</option>';
     }
@@ -57,7 +59,7 @@ function listar_canchas(){
 
             /* Construyo html con la lista de horas disponibles habiendo filtrado */
             print "\n                ".'<label for="horario">Horario: </label>';
-            print "\n                ".'<select name="horario">';
+            print "\n                ".'<select name="horario" id="horario">';
             foreach($horarios_disponibles as $h){
                 print "\n                ".'<option value="'.$h.'">'.$h.'</option>';
             }
