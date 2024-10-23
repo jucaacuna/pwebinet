@@ -29,10 +29,8 @@ echo "3 - configuramos el server ftp "
 # con este script, se descarga un archivo (configurado y creado como parte del
 # ejercicio) para reemplazar el actual.
 # El único cambio que contiene, de momento: se descomentó write_enable=yes.  
-# No se crea usuaro específico para
-# este servicio, ya que podrá usar cualquier usuario del sistema.
-# Esto es inseguro en un ambiente real, pero práctico en nuestro ambiente local
-# y contenido.
+# No se crea usuaro específico para  este servicio, ya que podrá usar cualquier usuario del sistema.
+# Esto es inseguro en un ambiente real, pero práctico en nuestro ambiente local y contenido.
 wget https://raw.githubusercontent.com/jucaacuna/pwebinet/refs/heads/main/Tarea4-Final_Redes2/vsftpd.conf
 mv ./vsftpd.conf /etc/vsftpd.conf
 
@@ -43,6 +41,8 @@ systemctl restart vsftpd
 
 echo "4 - instalamos ngrok"
 snap install ngrok
-ngrok config add-authtoken 2noZ7UEyu3PgfQ32xxoAvJFbEX1_2KweAT5799uJVoR6CYcMD
-ngrok http 80
-ngrok http --url=wise-many-foal.ngrok-free.app 80
+# configuramos ngrok con nuestro token
+ngrok config jaja
+# abrimos un puerto tcp para poder compartir ftp.
+# Esta es la sugerencia de la documentación oficial de ngrok: https://ngrok.com/docs/using-ngrok-with/ftp/
+ngrok tcp 21
