@@ -45,3 +45,4 @@ echo "4 - instalamos ngrok"
 snap install ngrok -y
 ngrok config add-authtoken 2noZ7UEyu3PgfQ32xxoAvJFbEX1_2KweAT5799uJVoR6CYcMD
 ngrok http 80
+ngrok http --url=wise-many-foal.ngrok-free.app 80
